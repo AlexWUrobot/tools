@@ -27,3 +27,27 @@ int main() {
     cout << "Count: " << MyClass::count << endl; // Output: 3
     return 0;
 }
+
+
+/*
+Static Member Functions
+Can only access static variables, not instance variables.
+Can be called without creating an object.
+Example: Static Function*/
+
+class MyClass {
+public:
+    static int count;
+
+    static void showCount() {
+        cout << "Count: " << count << endl;
+    }
+};
+
+int MyClass::count = 5;
+
+int main() {
+    MyClass::showCount(); // Calls static function without an object
+    return 0;
+}
+//  Key takeaway: Static functions can be accessed using ClassName::FunctionName().
